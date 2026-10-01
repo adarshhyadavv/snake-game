@@ -13,6 +13,7 @@ html,body {
 :root {
     /* backGround color */
     --bg-primary-color : #0c0c0c;
+    --bg-fill-color : #fdfdfc;
 
     /* text Color */
     --text-primary-color : #f0f0f0;
@@ -51,6 +52,10 @@ main,section {
 
 section {
     padding: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: var(--space-lg);
 }
 
 section .infos {
@@ -59,11 +64,26 @@ section .infos {
     justify-content: space-between;
 }
 
-section .board {
-    display: flex;
-}
-
 .info {
     padding : var(--space-sm) var(--space-md);
     border: 1px solid var(--border-primary-color);
+    border-radius: var(--border-radius-sm);
+}
+
+.board {
+    border: 1px solid var(--border-primary-color);
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(50px,1fr));
+    grid-template-rows: repeat(auto-fill,minmax(50px,1fr));
+}
+
+.block {
+    /* height: 30px;
+    width: 30px; */
+    border: 1px solid var(--border-primary-color);
+}
+
+.fill {
+    background-color: var(--bg-fill-color);
 }
